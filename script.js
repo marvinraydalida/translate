@@ -34,7 +34,11 @@ navigator.mediaDevices.enumerateDevices()
 function getMedia(sourceID = null) {
     let constraints = {
         audio: false,
-        video: true,
+        video: {
+            facingMode: {
+                ideal: "environment"
+            }
+        }
     };
 
     if (sourceID !== null) {
